@@ -1,0 +1,535 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D3FE693919CA1C1A00BC74C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FE693819CA1C1A00BC74C1 /* Foundation.framework */; };
+		D3FE693B19CA1C1A00BC74C1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FE693A19CA1C1A00BC74C1 /* CoreGraphics.framework */; };
+		D3FE693D19CA1C1A00BC74C1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FE693C19CA1C1A00BC74C1 /* UIKit.framework */; };
+		D3FE694319CA1C1A00BC74C1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3FE694119CA1C1A00BC74C1 /* InfoPlist.strings */; };
+		D3FE694519CA1C1A00BC74C1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FE694419CA1C1A00BC74C1 /* main.m */; };
+		D3FE694919CA1C1A00BC74C1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FE694819CA1C1A00BC74C1 /* AppDelegate.m */; };
+		D3FE694C19CA1C1A00BC74C1 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3FE694A19CA1C1A00BC74C1 /* Main_iPhone.storyboard */; };
+		D3FE694F19CA1C1A00BC74C1 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3FE694D19CA1C1A00BC74C1 /* Main_iPad.storyboard */; };
+		D3FE695219CA1C1A00BC74C1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FE695119CA1C1A00BC74C1 /* ViewController.m */; };
+		D3FE695419CA1C1A00BC74C1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3FE695319CA1C1A00BC74C1 /* Images.xcassets */; };
+		D3FE695B19CA1C1A00BC74C1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FE695A19CA1C1A00BC74C1 /* XCTest.framework */; };
+		D3FE695C19CA1C1A00BC74C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FE693819CA1C1A00BC74C1 /* Foundation.framework */; };
+		D3FE695D19CA1C1A00BC74C1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FE693C19CA1C1A00BC74C1 /* UIKit.framework */; };
+		D3FE696519CA1C1A00BC74C1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3FE696319CA1C1A00BC74C1 /* InfoPlist.strings */; };
+		D3FE696719CA1C1A00BC74C1 /* PushButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FE696619CA1C1A00BC74C1 /* PushButtonTests.m */; };
+		D3FE697619CA1FD400BC74C1 /* PushButtonScvWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FE697519CA1FD400BC74C1 /* PushButtonScvWrapper.m */; };
+		D3FE697A19CA55D900BC74C1 /* GolgiStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FE697819CA55D900BC74C1 /* GolgiStuff.m */; };
+		D3FE697D19CA592000BC74C1 /* AppData.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FE697B19CA592000BC74C1 /* AppData.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D3FE695E19CA1C1A00BC74C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3FE692D19CA1C1A00BC74C1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3FE693419CA1C1A00BC74C1;
+			remoteInfo = PushButton;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D3FE693519CA1C1A00BC74C1 /* PushButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3FE693819CA1C1A00BC74C1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D3FE693A19CA1C1A00BC74C1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D3FE693C19CA1C1A00BC74C1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D3FE694019CA1C1A00BC74C1 /* PushButton-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PushButton-Info.plist"; sourceTree = "<group>"; };
+		D3FE694219CA1C1A00BC74C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D3FE694419CA1C1A00BC74C1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D3FE694619CA1C1A00BC74C1 /* PushButton-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PushButton-Prefix.pch"; sourceTree = "<group>"; };
+		D3FE694719CA1C1A00BC74C1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D3FE694819CA1C1A00BC74C1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D3FE694B19CA1C1A00BC74C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		D3FE694E19CA1C1A00BC74C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		D3FE695019CA1C1A00BC74C1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D3FE695119CA1C1A00BC74C1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D3FE695319CA1C1A00BC74C1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D3FE695919CA1C1A00BC74C1 /* PushButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PushButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3FE695A19CA1C1A00BC74C1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D3FE696219CA1C1A00BC74C1 /* PushButtonTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PushButtonTests-Info.plist"; sourceTree = "<group>"; };
+		D3FE696419CA1C1A00BC74C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D3FE696619CA1C1A00BC74C1 /* PushButtonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushButtonTests.m; sourceTree = "<group>"; };
+		D3FE697419CA1FD400BC74C1 /* PushButtonScvWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushButtonScvWrapper.h; sourceTree = "<group>"; };
+		D3FE697519CA1FD400BC74C1 /* PushButtonScvWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushButtonScvWrapper.m; sourceTree = "<group>"; };
+		D3FE697719CA204400BC74C1 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		D3FE697819CA55D900BC74C1 /* GolgiStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GolgiStuff.m; sourceTree = "<group>"; };
+		D3FE697919CA55D900BC74C1 /* GolgiStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GolgiStuff.h; sourceTree = "<group>"; };
+		D3FE697B19CA592000BC74C1 /* AppData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppData.m; sourceTree = "<group>"; };
+		D3FE697C19CA592000BC74C1 /* AppData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppData.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D3FE693219CA1C1A00BC74C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3FE693B19CA1C1A00BC74C1 /* CoreGraphics.framework in Frameworks */,
+				D3FE693D19CA1C1A00BC74C1 /* UIKit.framework in Frameworks */,
+				D3FE693919CA1C1A00BC74C1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3FE695619CA1C1A00BC74C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3FE695B19CA1C1A00BC74C1 /* XCTest.framework in Frameworks */,
+				D3FE695D19CA1C1A00BC74C1 /* UIKit.framework in Frameworks */,
+				D3FE695C19CA1C1A00BC74C1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D3FE692C19CA1C1A00BC74C1 = {
+			isa = PBXGroup;
+			children = (
+				D3FE697719CA204400BC74C1 /* Config.xcconfig */,
+				D3FE693E19CA1C1A00BC74C1 /* PushButton */,
+				D3FE696019CA1C1A00BC74C1 /* PushButtonTests */,
+				D3FE693719CA1C1A00BC74C1 /* Frameworks */,
+				D3FE693619CA1C1A00BC74C1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D3FE693619CA1C1A00BC74C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D3FE693519CA1C1A00BC74C1 /* PushButton.app */,
+				D3FE695919CA1C1A00BC74C1 /* PushButtonTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D3FE693719CA1C1A00BC74C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3FE693819CA1C1A00BC74C1 /* Foundation.framework */,
+				D3FE693A19CA1C1A00BC74C1 /* CoreGraphics.framework */,
+				D3FE693C19CA1C1A00BC74C1 /* UIKit.framework */,
+				D3FE695A19CA1C1A00BC74C1 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3FE693E19CA1C1A00BC74C1 /* PushButton */ = {
+			isa = PBXGroup;
+			children = (
+				D3FE697C19CA592000BC74C1 /* AppData.h */,
+				D3FE697B19CA592000BC74C1 /* AppData.m */,
+				D3FE697919CA55D900BC74C1 /* GolgiStuff.h */,
+				D3FE697819CA55D900BC74C1 /* GolgiStuff.m */,
+				D3FE694719CA1C1A00BC74C1 /* AppDelegate.h */,
+				D3FE694819CA1C1A00BC74C1 /* AppDelegate.m */,
+				D3FE694A19CA1C1A00BC74C1 /* Main_iPhone.storyboard */,
+				D3FE694D19CA1C1A00BC74C1 /* Main_iPad.storyboard */,
+				D3FE695019CA1C1A00BC74C1 /* ViewController.h */,
+				D3FE695119CA1C1A00BC74C1 /* ViewController.m */,
+				D3FE695319CA1C1A00BC74C1 /* Images.xcassets */,
+				D3FE693F19CA1C1A00BC74C1 /* Supporting Files */,
+				D3FE697419CA1FD400BC74C1 /* PushButtonScvWrapper.h */,
+				D3FE697519CA1FD400BC74C1 /* PushButtonScvWrapper.m */,
+			);
+			path = PushButton;
+			sourceTree = "<group>";
+		};
+		D3FE693F19CA1C1A00BC74C1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D3FE694019CA1C1A00BC74C1 /* PushButton-Info.plist */,
+				D3FE694119CA1C1A00BC74C1 /* InfoPlist.strings */,
+				D3FE694419CA1C1A00BC74C1 /* main.m */,
+				D3FE694619CA1C1A00BC74C1 /* PushButton-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D3FE696019CA1C1A00BC74C1 /* PushButtonTests */ = {
+			isa = PBXGroup;
+			children = (
+				D3FE696619CA1C1A00BC74C1 /* PushButtonTests.m */,
+				D3FE696119CA1C1A00BC74C1 /* Supporting Files */,
+			);
+			path = PushButtonTests;
+			sourceTree = "<group>";
+		};
+		D3FE696119CA1C1A00BC74C1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D3FE696219CA1C1A00BC74C1 /* PushButtonTests-Info.plist */,
+				D3FE696319CA1C1A00BC74C1 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D3FE693419CA1C1A00BC74C1 /* PushButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3FE696A19CA1C1A00BC74C1 /* Build configuration list for PBXNativeTarget "PushButton" */;
+			buildPhases = (
+				D3FE697019CA1EDD00BC74C1 /* ShellScript */,
+				D3FE693119CA1C1A00BC74C1 /* Sources */,
+				D3FE693219CA1C1A00BC74C1 /* Frameworks */,
+				D3FE693319CA1C1A00BC74C1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PushButton;
+			productName = PushButton;
+			productReference = D3FE693519CA1C1A00BC74C1 /* PushButton.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D3FE695819CA1C1A00BC74C1 /* PushButtonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3FE696D19CA1C1A00BC74C1 /* Build configuration list for PBXNativeTarget "PushButtonTests" */;
+			buildPhases = (
+				D3FE695519CA1C1A00BC74C1 /* Sources */,
+				D3FE695619CA1C1A00BC74C1 /* Frameworks */,
+				D3FE695719CA1C1A00BC74C1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3FE695F19CA1C1A00BC74C1 /* PBXTargetDependency */,
+			);
+			name = PushButtonTests;
+			productName = PushButtonTests;
+			productReference = D3FE695919CA1C1A00BC74C1 /* PushButtonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D3FE692D19CA1C1A00BC74C1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Golgi;
+				TargetAttributes = {
+					D3FE693419CA1C1A00BC74C1 = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					D3FE695819CA1C1A00BC74C1 = {
+						TestTargetID = D3FE693419CA1C1A00BC74C1;
+					};
+				};
+			};
+			buildConfigurationList = D3FE693019CA1C1A00BC74C1 /* Build configuration list for PBXProject "PushButton" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D3FE692C19CA1C1A00BC74C1;
+			productRefGroup = D3FE693619CA1C1A00BC74C1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D3FE693419CA1C1A00BC74C1 /* PushButton */,
+				D3FE695819CA1C1A00BC74C1 /* PushButtonTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D3FE693319CA1C1A00BC74C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3FE694F19CA1C1A00BC74C1 /* Main_iPad.storyboard in Resources */,
+				D3FE695419CA1C1A00BC74C1 /* Images.xcassets in Resources */,
+				D3FE694C19CA1C1A00BC74C1 /* Main_iPhone.storyboard in Resources */,
+				D3FE694319CA1C1A00BC74C1 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3FE695719CA1C1A00BC74C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3FE696519CA1C1A00BC74C1 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D3FE697019CA1EDD00BC74C1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "WKDIR=\"$PROJECT_DIR/$PROJECT_NAME\"\ncp -f \"$PROJECT_DIR/../../PushButton.thrift\" \"$WKDIR\"\n\necho \"Hello\"\nDEVKEY=`cat \"$PROJECT_DIR/../../Golgi.DevKey\"`\nAPPKEY=`cat \"$PROJECT_DIR/../../Golgi.AppKey\"`\necho 1 $DEVKEY\necho 2 $APPKEY\necho \"#define GOLGI_DEV_KEY @\\\"$DEVKEY\\\"\" >\"$WKDIR/GOLGI_KEYS.h\"\necho \"#define GOLGI_APP_KEY @\\\"$APPKEY\\\"\" >>\"$WKDIR/GOLGI_KEYS.h\"\ncp \"$HOME/Golgi-Pkg/LATEST/iOS/golgi_gen.sh\" \"$WKDIR\"\nchmod +w \"$WKDIR/golgi_gen.sh\"\n. \"$WKDIR/golgi_gen.sh\"\nrm -f \"$WKDIR/golgi_gen.sh\"\nrm -f \"$WKDIR/PushButton.thrift\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D3FE693119CA1C1A00BC74C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3FE695219CA1C1A00BC74C1 /* ViewController.m in Sources */,
+				D3FE697A19CA55D900BC74C1 /* GolgiStuff.m in Sources */,
+				D3FE694919CA1C1A00BC74C1 /* AppDelegate.m in Sources */,
+				D3FE697D19CA592000BC74C1 /* AppData.m in Sources */,
+				D3FE697619CA1FD400BC74C1 /* PushButtonScvWrapper.m in Sources */,
+				D3FE694519CA1C1A00BC74C1 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3FE695519CA1C1A00BC74C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3FE696719CA1C1A00BC74C1 /* PushButtonTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D3FE695F19CA1C1A00BC74C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3FE693419CA1C1A00BC74C1 /* PushButton */;
+			targetProxy = D3FE695E19CA1C1A00BC74C1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D3FE694119CA1C1A00BC74C1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3FE694219CA1C1A00BC74C1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D3FE694A19CA1C1A00BC74C1 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3FE694B19CA1C1A00BC74C1 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		D3FE694D19CA1C1A00BC74C1 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3FE694E19CA1C1A00BC74C1 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		D3FE696319CA1C1A00BC74C1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3FE696419CA1C1A00BC74C1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D3FE696819CA1C1A00BC74C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3FE697719CA204400BC74C1 /* Config.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D3FE696919CA1C1A00BC74C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3FE697719CA204400BC74C1 /* Config.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D3FE696B19CA1C1A00BC74C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PushButton/PushButton-Prefix.pch";
+				INFOPLIST_FILE = "PushButton/PushButton-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D3FE696C19CA1C1A00BC74C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PushButton/PushButton-Prefix.pch";
+				INFOPLIST_FILE = "PushButton/PushButton-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D3FE696E19CA1C1A00BC74C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PushButton.app/PushButton";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PushButton/PushButton-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PushButtonTests/PushButtonTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D3FE696F19CA1C1A00BC74C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PushButton.app/PushButton";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PushButton/PushButton-Prefix.pch";
+				INFOPLIST_FILE = "PushButtonTests/PushButtonTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D3FE693019CA1C1A00BC74C1 /* Build configuration list for PBXProject "PushButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3FE696819CA1C1A00BC74C1 /* Debug */,
+				D3FE696919CA1C1A00BC74C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3FE696A19CA1C1A00BC74C1 /* Build configuration list for PBXNativeTarget "PushButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3FE696B19CA1C1A00BC74C1 /* Debug */,
+				D3FE696C19CA1C1A00BC74C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3FE696D19CA1C1A00BC74C1 /* Build configuration list for PBXNativeTarget "PushButtonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3FE696E19CA1C1A00BC74C1 /* Debug */,
+				D3FE696F19CA1C1A00BC74C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D3FE692D19CA1C1A00BC74C1 /* Project object */;
+}
