@@ -211,7 +211,7 @@ static GolgiStuff *instance = nil;
     
     
     stdGto = [[GolgiTransportOptions alloc] init];
-    [stdGto setValidityPeriodInSeconds:300];
+    [stdGto setValidityPeriodInSeconds:3600];
     
 
     [self doGolgiRegistration];
