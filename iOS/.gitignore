@@ -165,5 +165,7 @@ xcuserdata
 
 GOLGI_KEYS.h
 libGolgi.*
+libGolgiLite.*
+golgi_gen.sh
 
 

@@ -58,22 +58,26 @@
     UISwitch *sw2;
     NSString *ourId;
     
-    if(sw == a2bSwitch){
-        sw2 = b2aSwitch;
-        title = @"A2B";
+    if((sw == a2bSwitch && a2bSwitch.on == YES) || (sw == b2aSwitch && b2aSwitch.on == NO)){
         ourId = @"A";
         targetId = @"B";
     }
     else{
-        sw2 = a2bSwitch;
         title = @"B2A";
         ourId = @"B";
         targetId = @"A";
     }
     
     
-    NSLog(@"%@ Switch changed", title);
+    NSLog(@"Switch changed");
 
+    if(sw == a2bSwitch){
+        sw2 = b2aSwitch;
+    }
+    else{
+        sw2 = a2bSwitch;
+    }
+    
     [sw2 setOn:!(sw.on) animated:YES];
     
     a2bSwitch.enabled = NO;

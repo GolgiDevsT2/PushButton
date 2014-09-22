@@ -69,7 +69,7 @@ static GolgiStuff *instance = nil;
     }
     
     UILocalNotification* localNotification = [[UILocalNotification alloc] init];
-    localNotification.alertBody = @"Received Request";
+    localNotification.alertBody = [NSString stringWithFormat:@"Received Request: %@", [pushData getData]];
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     NSLog(@"D");
@@ -107,7 +107,7 @@ static GolgiStuff *instance = nil;
 - (void)sendRequestTo:(NSString *)dest
 {
     PushData *pData = [[PushData alloc] init];
-    [pData setData:@"Hello"];
+    [pData setData:[NSString stringWithFormat:@"%ld", (long)viewController.outboundCount]];
     
     NSLog(@"Sending to %@", dest);
     [PushButtonSvc sendButtonPushedUsingResultReceiver:[[_ButtonPushedResultReceiver alloc] initWithGolgiStuff:self] withTransportOptions:stdGto andDestination:dest withPushData:pData];
