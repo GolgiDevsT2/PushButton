@@ -41,6 +41,13 @@
     
     if([Golgi isGolgiPushData:userInfo]){
         NSLog(@"Golgi Received notification(1): %@", userInfo);
+        /*
+        UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+        localNotification.alertBody = @"Received Golgi Push";
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+         */
+
         [Golgi pushReceived:userInfo withCompletionHandler:completionHandler];
     }
     else{
@@ -74,6 +81,14 @@
             //
             // Ok, launched into the background, setup Golgi
             //
+            
+            /*
+            UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+            localNotification.alertBody = @"Launching into BG";
+            [[UIApplication sharedApplication] cancelAllLocalNotifications];
+            [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+             */
+            
             [Golgi enteringBackground];
             [Golgi useEphemeralConnection];
         }
