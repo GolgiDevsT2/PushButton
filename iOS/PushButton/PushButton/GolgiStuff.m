@@ -8,87 +8,11 @@
 
 #import <AudioToolbox/AudioToolbox.h>
 #import "GolgiStuff.h"
-#import "AppData.h"
 #import "GOLGI_KEYS.h"
 #import "PushButtonScvWrapper.h"
+#import "AppDelegate.h"
 
 static GolgiStuff *instance = nil;
-
-
-@interface _ButtonPushedResultReceiver: NSObject <PushButtonButtonPushedResultReceiver>
-{
-    GolgiStuff *golgiStuff;
-}
-@end
-@implementation _ButtonPushedResultReceiver
-- (void)success
-{
-    NSLog(@"buttonPushed: SUCCESS");
-    
-    if(golgiStuff.viewController != nil){
-        [golgiStuff.viewController responseReceived];
-    }
-
-}
-
-- (void)failureWithGolgiException:(GolgiException *)golgiException
-{
-    NSLog(@"buttonPushed: FAILED '%@'", [golgiException getErrText]);
-    
-    if(golgiStuff.viewController != nil){
-        [golgiStuff.viewController errorReceived];
-    }
-    
-}
-- (_ButtonPushedResultReceiver *)initWithGolgiStuff:(GolgiStuff *)_golgiStuff
-{
-    self = [self init];
-    
-    golgiStuff = _golgiStuff;
-    
-    return self;
-}
-
-
-@end
-
-@interface CombinedRequestReceiver: NSObject <PushButtonButtonPushedRequestReceiver>
-{
-    GolgiStuff *golgiStuff;
-}
-- (CombinedRequestReceiver *)initWithGolgiStuff:(GolgiStuff *)golgiStuff;
-@end
-@implementation CombinedRequestReceiver
-
-- (void)buttonPushedWithResultSender:(id<PushButtonButtonPushedResultSender>)resultSender andPushData:(PushData *)pushData
-{
-    NSLog(@"Received request");
-    [resultSender success];
-    if(golgiStuff.viewController != nil){
-        [golgiStuff.viewController requestReceived];
-    }
-    
-    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
-    localNotification.alertBody = [NSString stringWithFormat:@"Received Request: %@", [pushData getData]];
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
-    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-    NSLog(@"D");
-    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-    NSLog(@"E");
-}
-
-
-- (CombinedRequestReceiver *)initWithGolgiStuff:(GolgiStuff *)_golgiStuff
-{
-    self = [self init];
-    
-    golgiStuff = _golgiStuff;
-    
-    return self;
-}
-
-@end
-
 
 
 @implementation GolgiStuff
@@ -110,7 +34,16 @@ static GolgiStuff *instance = nil;
     [pData setData:[NSString stringWithFormat:@"%ld", (long)viewController.outboundCount]];
     
     NSLog(@"Sending to %@", dest);
-    [PushButtonSvc sendButtonPushedUsingResultReceiver:[[_ButtonPushedResultReceiver alloc] initWithGolgiStuff:self] withTransportOptions:stdGto andDestination:dest withPushData:pData];
+    [PushButtonSvc sendButtonPushedUsingResultHandler:^(PushButtonButtonPushedExceptionBundle *excBundle) {
+        if(viewController != nil){
+            if(excBundle == nil){
+                [viewController responseReceived];
+            }
+            else{
+                [viewController errorReceived];
+            }
+        }
+    } withTransportOptions:stdGto andDestination:dest withPushData:pData];
     NSLog(@"Gone");
 }
 
@@ -132,16 +65,28 @@ static GolgiStuff *instance = nil;
     //
     // and now do the main registration with the service
     //
-    NSLog(@"Registering with golgiId: '%@'", [AppData getInstanceId]);
+    NSLog(@"Registering with golgiId: '%@'", [AppDelegate getInstanceId]);
     
     
     // [Golgi setOption:@"USE_DEV_CLUSTER" withValue:@"0"];
     
-    CombinedRequestReceiver *crr = [[CombinedRequestReceiver alloc] initWithGolgiStuff:self];
+    [PushButtonSvc registerButtonPushedRequestHandler:^(id<PushButtonButtonPushedResultSender> resultSender, PushData *pushData) {
+        NSLog(@"Received request");
+        [resultSender success];
+        if(viewController != nil){
+            [viewController requestReceived];
+        }
+        
+        UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+        localNotification.alertBody = [NSString stringWithFormat:@"Received Request: %@", [pushData getData]];
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+        NSLog(@"D");
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+        NSLog(@"E");
+    }];
     
-    [PushButtonSvc registerButtonPushedRequestReceiver:crr];
-    
-    NSData *pushId = [AppData getPushId];
+    NSData *pushId = [AppDelegate getPushId];
     
     if(pushId.length > 0){
 #ifdef DEBUG
@@ -150,45 +95,35 @@ static GolgiStuff *instance = nil;
         [Golgi setProdPushToken:pushId];
 #endif
     }
-    NSString *instanceId = [AppData getInstanceId];
+    NSString *instanceId = [AppDelegate getInstanceId];
     if(instanceId.length > 0){
         [Golgi registerWithDevId:GOLGI_DEV_KEY
                            appId:GOLGI_APP_KEY
                           instId:instanceId
-                      andAPIUser:self];
+                andResultHandler:^(NSString *errorText) {
+                    if(errorText != nil){
+                        NSLog(@"Golgi Registration: FAIL => '%@'", errorText);
+                    }
+                    else{
+                        NSLog(@"Golgi Registration: PASS");
+                    }
+                }];
     }
 }
 
 
 - (void)setInstanceId:(NSString *)newInstanceId
 {
-    [AppData setInstanceId:newInstanceId];
+    [AppDelegate setInstanceId:newInstanceId];
     
     [self doGolgiRegistration];
-}
-//
-// Registration worked
-//
-
-- (void)golgiRegistrationSuccess
-{
-    NSLog(@"Golgi Registration: PASS");
-}
-
-//
-// Registration failed
-//
-
-- (void)golgiRegistrationFailure:(NSString *)errorText
-{
-    NSLog(@"Golgi Registration: FAIL => '%@'", errorText);
 }
 
 - (void)setPushId:(NSData *)newPushId
 {
-    NSData *pushId = [AppData getPushId];
+    NSData *pushId = [AppDelegate getPushId];
     if(pushId.length != newPushId.length || memcmp([pushId bytes], [newPushId bytes], pushId.length) != 0){
-        [AppData setPushId:newPushId];
+        [AppDelegate setPushId:newPushId];
         [self doGolgiRegistration];
     }
 }

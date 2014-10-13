@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D3907D6519EC603300AD02F4 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D3907D6419EC603300AD02F4 /* libsqlite3.0.dylib */; };
 		D3FE693919CA1C1A00BC74C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FE693819CA1C1A00BC74C1 /* Foundation.framework */; };
 		D3FE693B19CA1C1A00BC74C1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FE693A19CA1C1A00BC74C1 /* CoreGraphics.framework */; };
 		D3FE693D19CA1C1A00BC74C1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FE693C19CA1C1A00BC74C1 /* UIKit.framework */; };
@@ -24,7 +25,6 @@
 		D3FE696719CA1C1A00BC74C1 /* PushButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FE696619CA1C1A00BC74C1 /* PushButtonTests.m */; };
 		D3FE697619CA1FD400BC74C1 /* PushButtonScvWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FE697519CA1FD400BC74C1 /* PushButtonScvWrapper.m */; };
 		D3FE697A19CA55D900BC74C1 /* GolgiStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FE697819CA55D900BC74C1 /* GolgiStuff.m */; };
-		D3FE697D19CA592000BC74C1 /* AppData.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FE697B19CA592000BC74C1 /* AppData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D3907D6419EC603300AD02F4 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		D3FE693519CA1C1A00BC74C1 /* PushButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3FE693819CA1C1A00BC74C1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D3FE693A19CA1C1A00BC74C1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,8 +64,6 @@
 		D3FE697719CA204400BC74C1 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		D3FE697819CA55D900BC74C1 /* GolgiStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GolgiStuff.m; sourceTree = "<group>"; };
 		D3FE697919CA55D900BC74C1 /* GolgiStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GolgiStuff.h; sourceTree = "<group>"; };
-		D3FE697B19CA592000BC74C1 /* AppData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppData.m; sourceTree = "<group>"; };
-		D3FE697C19CA592000BC74C1 /* AppData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppData.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3907D6519EC603300AD02F4 /* libsqlite3.0.dylib in Frameworks */,
 				D3FE693B19CA1C1A00BC74C1 /* CoreGraphics.framework in Frameworks */,
 				D3FE693D19CA1C1A00BC74C1 /* UIKit.framework in Frameworks */,
 				D3FE693919CA1C1A00BC74C1 /* Foundation.framework in Frameworks */,
@@ -114,6 +114,7 @@
 		D3FE693719CA1C1A00BC74C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3907D6419EC603300AD02F4 /* libsqlite3.0.dylib */,
 				D3FE693819CA1C1A00BC74C1 /* Foundation.framework */,
 				D3FE693A19CA1C1A00BC74C1 /* CoreGraphics.framework */,
 				D3FE693C19CA1C1A00BC74C1 /* UIKit.framework */,
@@ -125,8 +126,6 @@
 		D3FE693E19CA1C1A00BC74C1 /* PushButton */ = {
 			isa = PBXGroup;
 			children = (
-				D3FE697C19CA592000BC74C1 /* AppData.h */,
-				D3FE697B19CA592000BC74C1 /* AppData.m */,
 				D3FE697919CA55D900BC74C1 /* GolgiStuff.h */,
 				D3FE697819CA55D900BC74C1 /* GolgiStuff.m */,
 				D3FE694719CA1C1A00BC74C1 /* AppDelegate.h */,
@@ -285,7 +284,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#\n# GOLGI_WORK_DIR: Where the golgi_gen script will copied to run\n# GOLGI_PKG_DIR: The Golgi Package install directory\n# GOLGI_LIB_DIR: Where the Golgi runtime libraries whould be put\n#\n\nGOLGI_WORK_DIR=\"$PROJECT_DIR/$PROJECT_NAME\"\nGOLGI_PKG_DIR=\"$HOME/Golgi-Pkg/LATEST\"\nGOLGI_HDR_DIR=\"$PROJECT_DIR/$PROJECT_N\U0013AME\"\nGOLGI_LIB_DIR=\"$PROJECT_DIR/$PROJECT_NAME\"\n\n#\n# Copy Thrift file(s) into place (if necessary)\n#\n\ncp -f \"$PROJECT_DIR/../../PushButton.thrift\" \"$WKDIR\"\n\n#\n# Create the GOLGI_KEYS.h file containing\n# the Developer key and the application key\n#\n\nDEVKEY=`cat \"$PROJECT_DIR/../../Golgi.DevKey\"`\nAPPKEY=`cat \"$PROJECT_DIR/../../Golgi.AppKey\"`\necho \"#define GOLGI_DEV_KEY @\\\"$DEVKEY\\\"\" >\"$GOLGI_WORK_DIR/GOLGI_KEYS.h\"\necho \"#define GOLGI_APP_KEY @\\\"$APPKEY\\\"\" >>\"$GOLGI_WORK_DIR/GOLGI_KEYS.h\"\n\n\n. \"$GOLGI_PKG_DIR/iOS/golgi_gen.sh\"\n\n#\n# Remove the thrift file because the canonical source is elsewhere\n#\n\nrm -f \"$GOLGI_WORK_DIR/PushButton.thrift\"\n";
+			shellScript = "#\n# GOLGI_WORK_DIR: Where the golgi_gen script will copied to run\n# GOLGI_PKG_DIR: The Golgi Package install directory\n# GOLGI_LIB_DIR: Where the Golgi runtime libraries whould be put\n#\n\nGOLGI_WORK_DIR=\"$PROJECT_DIR/$PROJECT_NAME\"\nGOLGI_PKG_DIR=\"$HOME/Golgi-Pkg/LATEST\"\nGOLGI_HDR_DIR=\"$PROJECT_DIR/$PROJECT_NAME\"\nGOLGI_LIB_DIR=\"$PROJECT_DIR/$PROJECT_NAME\"\n\n#\n# Copy Thrift file(s) into place (if necessary)\n#\n\ncp -f \"$PROJECT_DIR/../../PushButton.thrift\" \"$WKDIR\"\n\n#\n# Create the GOLGI_KEYS.h file containing\n# the Developer key and the application key\n#\n\nDEVKEY=`cat \"$PROJECT_DIR/../../Golgi.DevKey\"`\nAPPKEY=`cat \"$PROJECT_DIR/../../Golgi.AppKey\"`\necho \"#define GOLGI_DEV_KEY @\\\"$DEVKEY\\\"\" >\"$GOLGI_WORK_DIR/GOLGI_KEYS.h\"\necho \"#define GOLGI_APP_KEY @\\\"$APPKEY\\\"\" >>\"$GOLGI_WORK_DIR/GOLGI_KEYS.h\"\n\n\n. \"$GOLGI_PKG_DIR/iOS/golgi_gen.sh\"\n\n#\n# Remove the thrift file because the canonical source is elsewhere\n#\n\nrm -f \"$GOLGI_WORK_DIR/PushButton.thrift\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -297,7 +296,6 @@
 				D3FE695219CA1C1A00BC74C1 /* ViewController.m in Sources */,
 				D3FE697A19CA55D900BC74C1 /* GolgiStuff.m in Sources */,
 				D3FE694919CA1C1A00BC74C1 /* AppDelegate.m in Sources */,
-				D3FE697D19CA592000BC74C1 /* AppData.m in Sources */,
 				D3FE697619CA1FD400BC74C1 /* PushButtonScvWrapper.m in Sources */,
 				D3FE694519CA1C1A00BC74C1 /* main.m in Sources */,
 			);
@@ -436,6 +434,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PushButton/PushButton-Prefix.pch";
 				INFOPLIST_FILE = "PushButton/PushButton-Info.plist";
@@ -451,6 +450,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PushButton/PushButton-Prefix.pch";
 				INFOPLIST_FILE = "PushButton/PushButton-Info.plist";

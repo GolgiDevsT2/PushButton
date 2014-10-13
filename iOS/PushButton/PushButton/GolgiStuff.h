@@ -15,7 +15,7 @@
 
 @class ViewController;
 
-@interface GolgiStuff : NSObject <GolgiAPIUser>
+@interface GolgiStuff : NSObject
 {
     GolgiTransportOptions *stdGto;
 }

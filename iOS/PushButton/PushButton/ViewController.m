@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "AppData.h"
+#import "AppDelegate.h"
 
 @interface ViewController ()
 
@@ -95,9 +95,6 @@
         [alert show];
         
     }
-    
-    targetId = ourId;
-
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -133,7 +130,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSString *instanceId = [AppData getInstanceId];
+    NSString *instanceId = [AppDelegate getInstanceId];
 	// Do any additional setup after loading the view, typically from a nib.
     
     [a2bSwitch addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];

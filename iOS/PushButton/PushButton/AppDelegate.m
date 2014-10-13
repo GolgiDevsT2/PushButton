@@ -7,10 +7,35 @@
 //
 
 #import "AppDelegate.h"
-#import "AppData.h"
 #import "libGolgi.h"
 
 @implementation AppDelegate
+
+#define PUSH_KEY @"GOLGI-PUSH-ID"
+#define INST_KEY @"GOLGI-INSTANCE-ID"
+
++ (NSString *)getInstanceId
+{
+    return [GolgiStore getStringForKey:INST_KEY withDefault:@""];
+}
+
++ (void)setInstanceId:(NSString *)instanceId
+{
+    [GolgiStore deleteStringForKey:INST_KEY];
+    [GolgiStore putString:instanceId forKey:INST_KEY];
+
+}
+     
++ (NSData *)getPushId
+{
+    return [[NSData alloc] initWithBase64EncodedString:[GolgiStore getStringForKey:PUSH_KEY withDefault:@""] options:0];
+}
+
++ (void)setPushId:(NSData *)pushId
+{
+    [GolgiStore deleteStringForKey:PUSH_KEY];
+    [GolgiStore putString:[pushId base64EncodedStringWithOptions:0] forKey:PUSH_KEY];
+}
 
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
@@ -19,9 +44,7 @@
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
     // [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     
-    NSLog(@"My token is: %@", deviceToken);
-    
-    [AppData setPushId:deviceToken];
+    [AppDelegate setPushId:deviceToken];
     
 #ifdef DEBUG
     [Golgi setDevPushToken:deviceToken];
@@ -71,6 +94,11 @@
     {extern void enableOMNLogging(); enableOMNLogging();}
     NSLog(@"applicationDidFinishLaunching()");
     
+#ifdef DEBUG
+    [Golgi setDevPushToken:[AppDelegate getPushId]];
+#else
+    [Golgi setProdPushToken:[AppDelegate getPushId]];
+#endif
     
     golgiStuff = [GolgiStuff getInstance];
     
@@ -107,6 +135,17 @@
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
          (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     }
+    
+    NSString *err = [GolgiStore putString:@"Kelly" forKey:@"Brian"];
+    
+    NSLog(@"Error inserting: %@", err);
+    
+
+    NSString *val = [GolgiStore deleteStringForKey:@"Brian" withDefaultValue:@"WHOOPS"];
+    NSLog(@"Deleted Value: '%@'", val);
+    
+    val = [GolgiStore deleteStringForKey:@"Brian" withDefaultValue:@"WHOOPS"];
+    NSLog(@"Deleted Value: '%@'", val);
     
     return YES;
 }

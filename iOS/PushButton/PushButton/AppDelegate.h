@@ -13,6 +13,10 @@
 {
     GolgiStuff *golgiStuff;
 }
++ (NSString *)getInstanceId;
++ (void)setInstanceId:(NSString *)instanceId;
++ (NSData *)getPushId;
++ (void)setPushId:(NSData *)pushId;
 
 @property (strong, nonatomic) UIWindow *window;
 
