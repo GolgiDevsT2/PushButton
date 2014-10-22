@@ -84,6 +84,7 @@ static GolgiStuff *instance = nil;
         NSLog(@"D");
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
         NSLog(@"E");
+        
     }];
     
     NSData *pushId = [AppDelegate getPushId];
@@ -147,6 +148,8 @@ static GolgiStuff *instance = nil;
     
     stdGto = [[GolgiTransportOptions alloc] init];
     [stdGto setValidityPeriodInSeconds:3600];
+    
+    launchTime = time(NULL);
     
 
     [self doGolgiRegistration];

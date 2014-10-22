@@ -18,6 +18,7 @@
 @interface GolgiStuff : NSObject
 {
     GolgiTransportOptions *stdGto;
+    long launchTime;
 }
 
 @property ViewController *viewController;
